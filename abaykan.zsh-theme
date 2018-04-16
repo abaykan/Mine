@@ -1,7 +1,7 @@
-# igeek zsh-theme
-
-# logo igeek
-igeek="$fg_bold[cyan]
+# abaykan zsh-theme
+# Screenshot > https://abaykan.com/server/abaykan.zsh-theme~.png
+# logo abaykan
+abaykan="$fg_bold[cyan]
      _-----_
     |       |    
     |--(o)--|     ╒ $fg_bold[white]abaykan$fg_bold[cyan] ═════════════════════════════════════════════════════════╕
@@ -25,7 +25,7 @@ g_kernel="☉ $fg[white]System  : `uname -v`$fg[cyan]"
 g_date="☉ $fg[white]Today   : `date`$fg[cyan] \n\n"
 
 # print
-print -P $igeek
+print -P $abaykan
 print -P $g_whoami
 print -P $g_id
 print -P $g_kernel
