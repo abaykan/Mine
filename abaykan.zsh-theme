@@ -1,5 +1,7 @@
 # abaykan zsh-theme
 # Screenshot > https://abaykan.com/server/abaykan.zsh-theme~.png
+
+
 # logo abaykan
 abaykan="$fg_bold[cyan]
      _-----_
