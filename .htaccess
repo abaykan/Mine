@@ -1,0 +1,55 @@
+# show.php?id=* to show/id/*
+RewriteRule ^show/id/(.*)$ show.php?id=$1 [QSA]
+
+# Force Redirect to HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+# Access wp-login.php without Authentication
+<filesmatch "wp-login.php">
+Satisfy Any
+</filesmatch>
+
+# Default Index Page
+DirectoryIndex anotherpage.php
+
+# Chmod Various File Types
+# remember to never set CHMOD 777 unless you know what you are doing
+chmod .htpasswd files 640
+chmod .htaccess files 644
+chmod php files 600
+
+# Protect DDOS Attack
+LimitRequestBody 10240000
+
+# Disabling Script Execution
+AddHandler cgi-script .php .pl .py .jsp .asp .htm .shtml .sh .cgi
+Options -ExecCGI
+
+# Force Download File
+AddType application/octet-stream .avi
+AddType application/octet-stream .mpg
+AddType application/octet-stream .wmv
+AddType application/octet-stream .mp3
+
+# Custom Error Pages
+ErrorDocument 400 /errors/400.html
+ErrorDocument 401 /errors/401.html
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 500 /errors/500.html
+
+# Wordpress Default htaccess
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
