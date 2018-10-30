@@ -16,8 +16,7 @@ Satisfy Any
 # Default Index Page
 DirectoryIndex anotherpage.php
 
-# Chmod Various File Types
-# remember to never set CHMOD 777 unless you know what you are doing
+# Chmod Various File Types | Remember to never set CHMOD 777 unless you know what you are doing
 chmod .htpasswd files 640
 chmod .htaccess files 644
 chmod php files 600
