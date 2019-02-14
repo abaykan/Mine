@@ -1,1 +1,1 @@
-<a href="https://codelatte.org/"><img src="https://codelatte.org/wp-content/uploads/2018/09/codelatte4-768x333.png"></a>
+<a href="https://dev.codelatte.org/"><img src="https://cdnb.artstation.com/p/assets/images/images/015/876/823/large/codelatte-indonesia-0x04.jpg"></a>
