@@ -45,6 +45,10 @@ ErrorDocument 500 /errors/500.html
 php_flag engine off
 AddType text/plain php
 
+# Remove ?fbclid=
+RewriteCond %{QUERY_STRING} ^(.*)&?fbclid=[^&]+&?(.*)$ [NC]
+RewriteRule ^(.*)$ /$1?%1%2 [R=301,L]
+
 # Wordpress Default htaccess
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
